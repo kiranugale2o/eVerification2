@@ -14,6 +14,8 @@ const corsAllow = {
 };
 
 app.use(cors(corsAllow));
+app.options('*', cors(corsOptions)); // Enable preflight for all routes
+
 app.get("/", (req, res) => {
   res.send("hello");
 });
