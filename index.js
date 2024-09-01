@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 const corsAllow = {
   origin: "*",
   methods: "PUT,GET,PATCH,DELETE,POST",
-  credentials: true,
+  credentials: false,
 };
 
 app.use(cors(corsAllow));
