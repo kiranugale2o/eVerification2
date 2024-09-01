@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-require("dotenv").config({ path: ".env.local" });
+require("dotenv").config({ path: ".env" });
 
 app.use(require("./src/router/route"));
 app.use(express.json());
