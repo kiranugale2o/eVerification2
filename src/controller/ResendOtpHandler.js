@@ -25,7 +25,7 @@ const ResendOtpHandler = async (req, res, next) => {
         { otp: otp, expiration: expiration }
       );
     }
-    transporter.sendMail({
+    await transporter.sendMail({
       to: email,
       subject: "RESEND Your OTP Code",
       html: `
