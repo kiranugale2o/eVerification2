@@ -5,6 +5,7 @@ require("dotenv").config({ path: ".env" });
 
 app.use(require("./src/router/route"));
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 const corsAllow = {
   origin: "*",
@@ -13,7 +14,9 @@ const corsAllow = {
 };
 
 app.use(cors(corsAllow));
-
-app.listen(3000, (err) => {
-  console.log("server running on 3000");
+app.get("/", (req, res) => {
+  res.send("hello");
+});
+app.listen(3000 || process.env.PORT, (err) => {
+  console.log(`server running on ${PORT}`);
 });
