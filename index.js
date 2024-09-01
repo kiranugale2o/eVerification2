@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 const corsAllow = {
   origin: "*",
-  method: "PUT,GET,PATCH,DELETE,POST",
+  methods: "PUT,GET,PATCH,DELETE,POST",
   credentials: true,
 };
 
