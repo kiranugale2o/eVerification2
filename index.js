@@ -8,9 +8,10 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
 const corsAllow = {
-  origin: "*",
-  methods: "PUT,GET,PATCH,DELETE,POST",
-  credentials: false,
+ origin: 'http://localhost:3000', // Frontend URL
+  methods: 'PUT, GET, PATCH, DELETE, POST, OPTIONS',
+  credentials: true, // Allows cookies and other credentials
+  allowedHeaders: 'Content-Type, Authorization', // Allow these headers
 };
 
 app.use(cors(corsAllow));
